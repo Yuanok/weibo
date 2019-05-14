@@ -2,8 +2,7 @@
 <html>
   <head>
     <title>@yield('title', 'Weibo App') - Laravel 入门教程</title>
-    <!-- <link rel="stylesheet" href="/css/app.css"> -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
   </head>
   <body>
 
