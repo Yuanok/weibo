@@ -10702,7 +10702,7 @@ footer img.brand-icon {
 /* User gravatar */
 
 section.user_info {
-  padding-bottom: 100px;
+  padding-bottom: 10px;
   margin-top: 20px;
   text-align: center;
 }
@@ -10723,5 +10723,15 @@ section.user_info h1 {
   float: left;
   max-width: 50px;
   border-radius: 50%;
+}
+
+.gravatar_edit {
+  margin: 15px auto;
+  text-align: center;
+}
+
+.gravatar_edit .gravatar {
+  float: none;
+  max-width: 100px;
 }
 
