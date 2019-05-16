@@ -67,8 +67,8 @@ class UsersController extends Controller
         return view('users.index',['users'=>$users]);
     }
 
-    public function destory(User $user){
-        $this->authorize('destory',$user);
+    public function destroy(User $user){
+        $this->authorize('destroy',$user);
         $user->delete();
         Session()->flash('success','删除成功~');
         return back();
