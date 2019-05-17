@@ -48,6 +48,6 @@ class User extends Authenticatable
     }
 
     public function feed(){
-        return $this->statuses()->paginate(15);
+        return $this->statuses()->orderBy('created_at','desc');
     }
 }

@@ -30,5 +30,7 @@ Route::get('login','SessionsController@create')->name('login');
 Route::post('login','SessionsController@store')->name('login');
 Route::delete('logout','SessionsController@destory')->name('logout');
 
-Route::resource('statuses','StatusesController',['only' =>['store','destroy']]);
+// Route::resource('statuses','StatusesController',['only' =>['store','destroy']]);
+Route::post('/statuses','StatusesController@store')->name('statuses.store');
+Route::delete('/statuses/{status}','StatusesController@destroy')->name('statuses.destroy');
 
