@@ -37,8 +37,24 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function statuses(){
+        return $this->hasMany(Status::class);
+    }
+
+    public function feed(){
+        return $this->statuses()->orderBy('created_at','desc');
+    }
+
     public function gravatar($size='100'){
         $hash = md5(strtolower(trim($this->attributes['email'])));
         return "http://www.gravatar.com/avatar/$hash?s=$size";
+    }
+
+    public function followers(){
+        return $this->belongsToMany(User::class,'user_id','follower_id');
+    }
+
+    public function followings(){
+        return $this->belongsToMany(User::class,'follower_id','user_id');
     }
 }
