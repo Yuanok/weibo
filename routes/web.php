@@ -32,3 +32,5 @@ Route::delete('logout','SessionsController@destory')->name('logout');
 
 Route::resource('statuses','StatusesController')->only(['store','destroy']);
 
+Route::get('/users/{user}/followerings','UsersController@followings')->name('users.followings');
+Route::get('/users/{user}/followers','UsersController@followers')->name('users.followers');

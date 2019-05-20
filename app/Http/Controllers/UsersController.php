@@ -21,11 +21,7 @@ class UsersController extends Controller
     }
 
     public function show(User $user){
-<<<<<<< HEAD
-        $statuses = $user->statuses()->orderBy('created_at','desc')->paginate(15);       
-=======
         $statuses = $user->statuses()->orderBy('created_at','desc')->paginate(15);
->>>>>>> following-users
         return view('users.show',['user'=>$user,'statuses'=>$statuses]);
     }
 
@@ -77,6 +73,18 @@ class UsersController extends Controller
         $user->delete();
         Session()->flash('success','删除成功~');
         return back();
+    }
+
+    public function followings(User $user){
+        $users = $user->followings()->paginate(15);
+        $title = $user->name.'关注的人';
+        return view('users.show_follow',['users'=>$users,'title'=>$title]);
+    }
+
+    public function followers(User $user){
+        $users = $user->followers()->paginate(15);
+        $title = $user->name.'的粉丝';
+        return view('users.show_follow',['users'=>$users,'title'=>$title]);
     }
 
 }
