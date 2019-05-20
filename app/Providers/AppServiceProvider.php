@@ -27,5 +27,6 @@ class AppServiceProvider extends ServiceProvider
     {
         Carbon::setLocale('zh');
         Schema::defaultStringLength(191);
+        Carbon::setLocale('zh');
     }
 }

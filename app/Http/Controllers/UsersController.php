@@ -21,7 +21,11 @@ class UsersController extends Controller
     }
 
     public function show(User $user){
+<<<<<<< HEAD
         $statuses = $user->statuses()->orderBy('created_at','desc')->paginate(15);       
+=======
+        $statuses = $user->statuses()->orderBy('created_at','desc')->paginate(15);
+>>>>>>> following-users
         return view('users.show',['user'=>$user,'statuses'=>$statuses]);
     }
 
